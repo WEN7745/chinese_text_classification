@@ -15,6 +15,7 @@ tensorboardX
 
 ## 复现
 根据论文进行复现
+
     FGSM: 
         涉及参数：
             epsilon：为每次扰动delta的上限值，用于限制扰动的力度
@@ -50,7 +51,9 @@ tensorboardX
                 step3 稳定delta值: 对当前delta进行基于epsilon上下限的截断，以保证扰动参数delta的稳定性
                 step4 更新模型参数: 基于**原始的delta值**，进行梯度计算并回传来更新模型参数
                 step5 扰动更新次数判断：若扰动delta的更新次数**大于设定值**，则跳出；否则重复step2、step3和step4
-    ## 调优
+
+## 调优
+
 针对以下三种超参数，采用网格式调优
 最终得出最佳参数epsilon、alpha、attack_iters
     {
